@@ -9,14 +9,15 @@ public class CopyPast {
 		if (args.length==2) {
 			File originFileToCopy= new File(args[0]);
 			File destinyFileToCopy=new File(args[1]);
-			Scanner sc2 = new Scanner(originFileToCopy);
+			Scanner sc = new Scanner(originFileToCopy);
 		    BufferedWriter writer = new BufferedWriter(new FileWriter(destinyFileToCopy));
-			while (sc2.hasNext()) {
-			    writer.write(sc2.nextLine());
+			while (sc.hasNext()) {
+			    writer.write(sc.nextLine());
 			    writer.newLine();
+			    //writer.write(sc.useDelimiter("\\A").next());
 			}
 		    writer.close();
-		    sc2.close();
+		    sc.close();
 		}
 		else {
 			System.out.println("Please, enter the path of the file that will be copied and the new file's path.");
